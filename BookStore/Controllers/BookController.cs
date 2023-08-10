@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BookStore.BookOperations.CreateBook;
 using BookStore.DBOperations;
 using BookStore.Entities;
 using Microsoft.AspNetCore.Http;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static BookStore.BookOperations.CreateBook.CreateBookCommand;
 
 namespace BookStore.Controllers
 {
@@ -34,7 +36,7 @@ namespace BookStore.Controllers
             return book; // endpoint
         }
         [HttpPost]
-        public IActionResult AddBook([FromBody] Book newBook)
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             var book = _context.Books.SingleOrDefault(x => x.Title == newBook.Title);
 
@@ -44,7 +46,7 @@ namespace BookStore.Controllers
 
             }
 
-            _context.Books.Add(newBook); //db eklendi save lazım
+            _context.Books.Add(book); 
             _context.SaveChanges();
 
             return Ok();
