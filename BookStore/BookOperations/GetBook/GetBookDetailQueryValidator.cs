@@ -6,7 +6,7 @@ namespace BookStore.BookOperations.GetBook
     {
         public GetBookDetailQueryValidator()
         {
-            RuleFor(x => x.BookID).NotEmpty().GreaterThan(0);
+            
         }
     }
 }
