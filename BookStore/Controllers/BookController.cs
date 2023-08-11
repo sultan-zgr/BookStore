@@ -14,9 +14,9 @@ namespace BookStore.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        readonly BookStoreDbContext _context;
+        readonly IBookStoreDbContext _context;
         readonly IMapper _mapper;
-        public BookController(BookStoreDbContext context, IMapper mapper)
+        public BookController(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
