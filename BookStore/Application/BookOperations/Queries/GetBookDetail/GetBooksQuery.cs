@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore.BookOperations.GetBookDetail
+namespace BookStore.Application.BookOperations.Queries.GetBookDetail
 {
     public class GetBooksQuery
     {
@@ -20,9 +20,9 @@ namespace BookStore.BookOperations.GetBookDetail
 
         public List<BooksViewModel> Handle()
         {
-            var bookList = _context.Books.OrderBy(x => x.Id).ToList<Book>();
+            var bookList = _context.Books.OrderBy(x => x.Id).ToList();
             List<BooksViewModel> viewModel = _mapper.Map<List<BooksViewModel>>(bookList); // new List<BooksViewModel>();
-          
+
             return viewModel;
         }
     }

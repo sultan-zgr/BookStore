@@ -1,8 +1,14 @@
 ﻿using AutoMapper;
-using BookStore.BookOperations.GetBookDetail;
+using BookStore.Application.AuthorOperations.Commands.UpdateAuthor;
+using BookStore.Application.BookOperations.Queries.GetBookDetail;
+using BookStore.Application.GenreOperations.Queries.GetGenreDetail;
+using BookStore.Application.GenreOperations.Queries.GetGenres;
 using BookStore.Entities;
-using static BookStore.BookOperations.CreateBook.CreateBookCommand;
-using static BookStore.BookOperations.GetBookDetail.GetBooksQuery;
+using static BookStore.Application.AuthorOperations.Commands.CreateAuthor.CreateAuthorCommand;
+using static BookStore.Application.AuthorOperations.Queries.GetAuthorDetail.GetAuthorDetailQuery;
+using static BookStore.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
+using static BookStore.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
+using static BookStore.Application.BookOperations.Queries.GetBookDetail.GetBooksQuery;
 
 namespace BookStore.Common
 {
@@ -12,6 +18,15 @@ namespace BookStore.Common
         {
             CreateMap<CreateBookModel, Book>();
             CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => ((GenreEnum)src. GenreID).ToString()));
+          
+            CreateMap<Genre, GenresViewModel>();
+            CreateMap<Genre, GenreDetailViewModel>();
+
+            CreateMap<Author, AuthorsViewModel>();
+            CreateMap<Author, AuthorDetailViewModel>();
+            CreateMap<CreateAuthorViewModel, Author>();
+            CreateMap<UpdateAuthorModel, Author>();
+
         }
     }
 }

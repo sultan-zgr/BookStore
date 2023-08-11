@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
 
-namespace BookStore.BookOperations.GetBook
+namespace BookStore.Application.BookOperations.Queries.GetBook
 {
     public class GetBookDetailQueryValidator : AbstractValidator<GetBooksQuery>
     {
         public GetBookDetailQueryValidator()
         {
-            
+
         }
     }
 }

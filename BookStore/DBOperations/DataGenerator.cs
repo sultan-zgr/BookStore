@@ -18,6 +18,21 @@ namespace BookStore.DBOperations
                     return;   // Data was already seeded
                 }
 
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Personal Growth"
+                    },
+                    new Genre
+                    {
+                        Name = "Sciene Fiction"
+                    },
+                    new Genre
+                    {
+                        Name = "Romance"
+                    }
+                    );
+
                 context.Books.AddRange(
                 new Book()
                 {

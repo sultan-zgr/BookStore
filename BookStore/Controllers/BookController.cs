@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BookStore.BookOperations.CreateBook;
 using BookStore.DBOperations;
 using BookStore.Entities;
 using Microsoft.AspNetCore.Http;
@@ -7,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static BookStore.BookOperations.CreateBook.CreateBookCommand;
+using static BookStore.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 
 namespace BookStore.Controllers
 {
